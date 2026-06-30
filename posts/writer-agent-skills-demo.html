@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writer Agent Skills — Demo Microsite</title>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0a0a0f;
+      --card: #13131a;
+      --border: #1e1e2e;
+      --accent: #6c63ff;
+      --accent2: #ff6584;
+      --text: #e8e8f0;
+      --muted: #888899;
+      --success: #4ade80;
+      --warning: #facc15;
+      --danger: #f87171;
+    }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; font-size: 16px; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    /* Hero */
+    .hero { background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 50%, #0a1a2e 100%); padding: 6rem 2rem 5rem; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 40%, rgba(108,99,255,0.15) 0%, transparent 60%); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.3); color: #a78bfa; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; background: linear-gradient(135deg, #fff 0%, #a78bfa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1.25rem; }
+    .hero p { font-size: 1.15rem; color: var(--muted); max-width: 560px; margin: 0 auto 2.5rem; }
+    .hero-cta { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--accent); color: #fff; padding: 0.85rem 2rem; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: opacity 0.2s; }
+    .hero-cta:hover { opacity: 0.85; color: #fff; }
+    /* Nav */
+    nav { background: rgba(10,10,15,0.95); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+    .nav-logo { font-weight: 800; font-size: 1.1rem; color: var(--text); display: flex; align-items: center; gap: 0.5rem; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    /* Sections */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; color: var(--text); margin-bottom: 1rem; }
+    .section-desc { color: var(--muted); font-size: 1.05rem; max-width: 560px; margin-bottom: 3rem; }
+    /* Skills grid */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: border-color 0.2s, transform 0.2s; }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .skill-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .skill-icon.purple { background: rgba(108,99,255,0.15); color: #a78bfa; }
+    .skill-icon.pink { background: rgba(255,101,132,0.15); color: #f9a8d4; }
+    .skill-icon.green { background: rgba(74,222,128,0.15); color: #4ade80; }
+    .skill-icon.blue { background: rgba(96,165,250,0.15); color: #60a5fa; }
+    .skill-icon.yellow { background: rgba(250,204,21,0.15); color: #facc15; }
+    .skill-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .skill-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+    .skill-tag { display: inline-block; background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2); color: #a78bfa; font-size: 0.72rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 999px; margin-top: 0.75rem; }
+    /* Stats */
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center; }
+    .stat-number { font-size: 2.8rem; font-weight: 900; background: linear-gradient(135deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-label { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; }
+    /* CTA band */
+    .cta-band { background: linear-gradient(135deg, rgba(108,99,255,0.12), rgba(255,101,132,0.08)); border: 1px solid rgba(108,99,255,0.2); border-radius: 16px; padding: 3.5rem 2rem; text-align: center; }
+    .cta-band h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .cta-band p { color: var(--muted); margin-bottom: 2rem; }
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <i data-lucide="zap" style="width:18px;height:18px;color:#6c63ff"></i>
+    Writer Agent
+  </div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#stats">Stats</a>
+    <a href="#get-started">Get Started</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge"><i data-lucide="sparkles" style="width:13px;height:13px"></i> Powered by Writer</div>
+  <h1>Everything You Need,<br>One Intelligent Agent</h1>
+  <p>Writer Agent comes loaded with powerful skills — from document generation to financial compliance — all ready to run on demand.</p>
+  <a href="#skills" class="hero-cta"><i data-lucide="arrow-down" style="width:16px;height:16px"></i> Explore the Skills</a>
+</div>
+
+<section id="stats">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-number">9</div>
+        <div class="stat-label">Active Skills</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Document Formats</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Autonomous Execution</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Use Cases</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Skills That Ship Work</h2>
+    <p class="section-desc">Each skill is a production-ready module the agent can invoke autonomously to complete complex tasks end-to-end.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon purple"><i data-lucide="file-text" style="width:20px;height:20px"></i></div>
+        <h3>PPTX — Presentations</h3>
+        <p>Create, edit, and export polished PowerPoint decks with proper layouts, speaker notes, and themes from any brief.</p>
+        <span class="skill-tag">Built-in</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon pink"><i data-lucide="file" style="width:20px;height:20px"></i></div>
+        <h3>PDF — Documents</h3>
+        <p>Generate, extract, watermark, encrypt, and manipulate PDF files with full citation and formatting support.</p>
+        <span class="skill-tag">Built-in</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon green"><i data-lucide="file-type" style="width:20px;height:20px"></i></div>
+        <h3>DOCX — Word Documents</h3>
+        <p>Create and edit Word documents with tracked changes, comments, tables, headers, and rich formatting.</p>
+        <span class="skill-tag">Built-in</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon blue"><i data-lucide="code" style="width:20px;height:20px"></i></div>
+        <h3>HTML — Web Pages</h3>
+        <p>Build polished, self-contained HTML dashboards, landing pages, and reports with inline CSS and interactivity.</p>
+        <span class="skill-tag">Built-in</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon yellow"><i data-lucide="table" style="width:20px;height:20px"></i></div>
+        <h3>XLSX — Spreadsheets</h3>
+        <p>Create and analyze Excel files with formulas, charts, pivot tables, and formatted data across multiple sheets.</p>
+        <span class="skill-tag">Built-in</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon purple"><i data-lucide="shield-check" style="width:20px;height:20px"></i></div>
+        <h3>Altitude Copy Validator</h3>
+        <p>Validates marketing copy against Altitude Financial's channel-specific character budgets across LinkedIn, Instagram, YouTube, and Google Ads.</p>
+        <span class="skill-tag">Custom</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon pink"><i data-lucide="scale" style="width:20px;height:20px"></i></div>
+        <h3>Altitude Compliance</h3>
+        <p>Reviews customer-facing content against Regulation Z, FTC, CFPB UDAAP, and Altitude Financial internal standards with structured pass/fail reports.</p>
+        <span class="skill-tag">Custom</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon green"><i data-lucide="globe" style="width:20px;height:20px"></i></div>
+        <h3>GitHub Microsite Publisher</h3>
+        <p>Generates polished HTML microsites and instantly pushes them to GitHub Pages for immediate public viewing — like this very page.</p>
+        <span class="skill-tag">Custom</span>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon blue"><i data-lucide="monitor" style="width:20px;height:20px"></i></div>
+        <h3>Agent Browser</h3>
+        <p>Full browser automation — navigate, interact, fill forms, capture screenshots, and extract data from any live website.</p>
+        <span class="skill-tag">Built-in</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="get-started">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Ready to put it to work?</h2>
+      <p>Open Writer Agent and start a new thread — your skills are ready to go.</p>
+      <a href="https://app.writer.com" class="hero-cta" style="display:inline-flex">
+        <i data-lucide="external-link" style="width:16px;height:16px"></i> Open Writer Agent
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built with ❤️ by Writer Agent · Published via github-microsite-publisher skill · June 2026</p>
+</footer>
+
+<script>lucide.createIcons();</script>
+</body>
+</html>
