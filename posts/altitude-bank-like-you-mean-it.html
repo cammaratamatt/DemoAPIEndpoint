@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Altitude Everyday Checking and Altitude Rewards Visa — no fees, no minimums, real cash back on dining, streaming, and more. Bank Like You Mean It." />
+  <meta name="keywords" content="no fee checking account, cash back rewards card, young adults, no annual fee credit card, early direct deposit, Altitude Financial" />
+  <meta property="og:title" content="Bank Like You Mean It | Altitude Financial" />
+  <meta property="og:description" content="No fees. No minimums. Real cash back. Two accounts built for the way you actually live." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bank Like You Mean It | Altitude Financial" />
+  <meta name="twitter:description" content="No fees. No minimums. Real cash back on dining, streaming, and more." />
+  <title>Bank Like You Mean It | Altitude Financial</title>
+  <style>
+    /* ============================================================
+       ALTITUDE FINANCIAL — BRAND STYLESHEET
+       Colors: Navy #0A2342 | Teal #00B8A9 | White #F8F9FA
+               Charcoal #2D2D2D | Electric Blue #1E90FF
+    ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0A2342;
+      --teal:   #00B8A9;
+      --white:  #F8F9FA;
+      --charcoal: #2D2D2D;
+      --cta-blue: #1E90FF;
+      --light-bg: #EEF6F5;
+      --border:  #D0E8E6;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      font-size: 16px;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      color: var(--white);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--teal); }
+    .nav-cta {
+      background: var(--cta-blue);
+      color: #fff;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #1278d4; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d3060 60%, #0a4a6e 100%);
+      color: var(--white);
+      padding: 100px 5% 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,184,169,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(0,184,169,0.2);
+      color: var(--teal);
+      border: 1px solid rgba(0,184,169,0.4);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--teal);
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(248,249,250,0.85);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--cta-blue);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #1278d4; transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid rgba(248,249,250,0.4);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--teal); background: rgba(0,184,169,0.1); }
+    .hero-note {
+      margin-top: 28px;
+      font-size: 0.8rem;
+      color: rgba(248,249,250,0.55);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--teal);
+      padding: 18px 5%;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-item svg { flex-shrink: 0; }
+
+    /* ── SECTION WRAPPER ── */
+    section { padding: 80px 5%; }
+    .section-label {
+      text-align: center;
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+    }
+    .section-sub {
+      text-align: center;
+      color: #555;
+      font-size: 1.05rem;
+      max-width: 580px;
+      margin: 0 auto 56px;
+      line-height: 1.7;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--white); }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .product-card {
+      background: var(--white);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      position: relative;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .product-card:hover {
+      box-shadow: 0 12px 40px rgba(10,35,66,0.12);
+      border-color: var(--teal);
+    }
+    .product-card.featured {
+      border-color: var(--teal);
+      background: linear-gradient(160deg, #f0fffe 0%, var(--white) 100%);
+    }
+    .product-badge {
+      position: absolute;
+      top: -14px;
+      left: 32px;
+      background: var(--teal);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .product-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--light-bg);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+    }
+    .product-card h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .product-tagline {
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .product-features {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+    .product-features li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: var(--charcoal);
+    }
+    .product-features li:last-child { border-bottom: none; }
+    .feature-check {
+      color: var(--teal);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .feature-label { font-weight: 600; color: var(--navy); }
+    .product-cta {
+      display: block;
+      text-align: center;
+      background: var(--navy);
+      color: var(--white);
+      padding: 14px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .product-cta:hover { background: #0d3060; }
+    .product-cta.teal {
+      background: var(--teal);
+      color: var(--navy);
+    }
+    .product-cta.teal:hover { background: #00a396; }
+
+    /* ── VALUE PROPS ── */
+    .value-props { background: var(--light-bg); }
+    .vp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .vp-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .vp-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .vp-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .vp-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ── REWARDS BREAKDOWN ── */
+    .rewards { background: var(--navy); color: var(--white); }
+    .rewards .section-title { color: var(--white); }
+    .rewards .section-sub { color: rgba(248,249,250,0.75); }
+    .rewards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+    .reward-tile {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(0,184,169,0.3);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .reward-tile:hover { background: rgba(0,184,169,0.12); }
+    .reward-pct {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .reward-cat {
+      font-size: 0.95rem;
+      color: rgba(248,249,250,0.85);
+      font-weight: 500;
+    }
+    .rewards-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: rgba(248,249,250,0.5);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ── SOCIAL PROOF ── */
+    .social-proof { background: var(--white); }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .testimonial {
+      background: var(--light-bg);
+      border-radius: 12px;
+      padding: 32px 28px;
+      border-left: 4px solid var(--teal);
+    }
+    .testimonial-stars {
+      color: #f5a623;
+      font-size: 1rem;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial p {
+      font-size: 0.95rem;
+      color: var(--charcoal);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: #888;
+    }
+
+    /* ── FAQ ── */
+    .faq { background: var(--light-bg); }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 22px 28px;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-family: var(--font);
+    }
+    .faq-question:hover { background: var(--light-bg); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--teal);
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s;
+      padding: 0 28px;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding: 0 28px 22px;
+    }
+
+    /* ── BOTTOM CTA ── */
+    .bottom-cta {
+      background: linear-gradient(135deg, var(--navy) 0%, #0d3060 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 100px 5%;
+    }
+    .bottom-cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .bottom-cta p {
+      font-size: 1.1rem;
+      color: rgba(248,249,250,0.8);
+      max-width: 520px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+    .bottom-cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── DISCLOSURE / FOOTER ── */
+    .disclosure {
+      background: #f0f0f0;
+      padding: 32px 5%;
+      border-top: 1px solid #ddd;
+    }
+    .disclosure p {
+      font-size: 0.78rem;
+      color: #666;
+      line-height: 1.7;
+      max-width: 1000px;
+      margin: 0 auto 8px;
+    }
+    .disclosure p strong { color: var(--charcoal); }
+
+    footer {
+      background: var(--navy);
+      color: rgba(248,249,250,0.6);
+      padding: 40px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    .footer-logo span { color: var(--teal); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: rgba(248,249,250,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy {
+      font-size: 0.8rem;
+      width: 100%;
+      text-align: center;
+      margin-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 16px;
+    }
+
+    /* ── COOKIE BANNER ── */
+    #cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--navy);
+      color: var(--white);
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      z-index: 999;
+      border-top: 3px solid var(--teal);
+      font-size: 0.88rem;
+    }
+    #cookie-banner p { max-width: 700px; line-height: 1.5; }
+    #cookie-banner a { color: var(--teal); }
+    #cookie-accept {
+      background: var(--teal);
+      color: var(--navy);
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    #cookie-accept:hover { background: #00a396; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 0 4%; }
+      .hero { padding: 72px 4% 60px; }
+      section { padding: 60px 4%; }
+      .trust-bar { gap: 20px; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════ -->
+<nav aria-label="Main navigation">
+  <a href="#" class="nav-logo">Altitude<span>Financial</span></a>
+  <a href="#open-account" class="nav-cta">Open Your Account</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-eyebrow">Launching August 1–10, 2026</div>
+  <h1 id="hero-heading">Bank Like You<br><em>Mean It.</em></h1>
+  <p class="hero-sub">
+    No fees. No minimums. No surprises. Two accounts built for the way you actually live — not the way your parents' bank thinks you should.
+  </p>
+  <div class="hero-ctas">
+    <a href="#open-account" class="btn-primary">Open Your Account</a>
+    <a href="#products" class="btn-secondary">See How It Works</a>
+  </div>
+  <p class="hero-note">Subject to credit approval based on creditworthiness. See rates & terms below.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TRUST BAR
+════════════════════════════════════════════ -->
+<div class="trust-bar" role="complementary" aria-label="Key features">
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    No Monthly Fees
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    No Minimum Balance
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    Up to 3% Cash Back
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    $0 Annual Fee
+  </div>
+  <div class="trust-item">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+    Early Direct Deposit
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PRODUCTS
+════════════════════════════════════════════ -->
+<section class="products" id="products" aria-labelledby="products-heading">
+  <p class="section-label">Two Products. One Decision.</p>
+  <h2 class="section-title" id="products-heading">Everything You Need.<br>Nothing You Don't.</h2>
+  <p class="section-sub">Open a checking account, grab the rewards card, and start earning on the things you already buy.</p>
+
+  <div class="products-grid">
+
+    <!-- Checking Card -->
+    <div class="product-card">
+      <div class="product-icon" aria-hidden="true">🏦</div>
+      <h3>Altitude Everyday Checking</h3>
+      <p class="product-tagline">The account that gets out of your way.</p>
+      <ul class="product-features" aria-label="Checking account features">
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">No monthly fee</span> — ever. Not after a trial, not with conditions.</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">No minimum balance</span> — keep what you have, spend what you need.</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">Up to 2 days early direct deposit</span> — your paycheck, sooner.</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">Up to $10/month ATM reimbursement</span> — nationwide.</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">Full mobile app</span> — Zelle, online banking, everything in one place.</span>
+        </li>
+      </ul>
+      <a href="#open-account" class="product-cta">Open Checking Account</a>
+    </div>
+
+    <!-- Rewards Card -->
+    <div class="product-card featured">
+      <div class="product-badge">Most Popular</div>
+      <div class="product-icon" aria-hidden="true">💳</div>
+      <h3>Altitude Rewards Visa</h3>
+      <p class="product-tagline">Cash back on the things you actually buy.</p>
+      <ul class="product-features" aria-label="Rewards Visa features">
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">3% cash back</span> on dining & food delivery</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">2% cash back</span> on streaming & subscriptions</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">1% cash back</span> on all other purchases</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">$0 annual fee</span> — no annual fee, period.</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">No foreign transaction fees</span> — spend abroad without the penalty.</span>
+        </li>
+        <li>
+          <span class="feature-check" aria-hidden="true">✓</span>
+          <span><span class="feature-label">0% intro APR for 12 months</span> on purchases for new cardholders.<sup>1</sup></span>
+        </li>
+      </ul>
+      <a href="#open-account" class="product-cta teal">Apply for the Rewards Visa</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     VALUE PROPOSITIONS
+════════════════════════════════════════════ -->
+<section class="value-props" aria-labelledby="vp-heading">
+  <p class="section-label">Why Altitude</p>
+  <h2 class="section-title" id="vp-heading">Built for the Way You Actually Live</h2>
+  <p class="section-sub">We designed these accounts for people who expect their bank to keep up with them — not the other way around.</p>
+
+  <div class="vp-grid">
+    <div class="vp-card">
+      <span class="vp-icon" aria-hidden="true">🚫</span>
+      <h4>Zero Hidden Fees</h4>
+      <p>No monthly fees, no minimum balance requirements, no gotchas buried in the fine print. What you see is what you get.</p>
+    </div>
+    <div class="vp-card">
+      <span class="vp-icon" aria-hidden="true">⚡</span>
+      <h4>Get Paid Sooner</h4>
+      <p>With direct deposit, your paycheck can hit your account up to 2 days early. Your money, on your schedule.</p>
+    </div>
+    <div class="vp-card">
+      <span class="vp-icon" aria-hidden="true">🍕</span>
+      <h4>Rewards That Make Sense</h4>
+      <p>3% back on dining, 2% on streaming — categories that match how you actually spend, not how a bank thinks you should.</p>
+    </div>
+    <div class="vp-card">
+      <span class="vp-icon" aria-hidden="true">📱</span>
+      <h4>Mobile-First Banking</h4>
+      <p>A full-featured app with Zelle, real-time notifications, and everything you need to manage your money on the go.</p>
+    </div>
+    <div class="vp-card">
+      <span class="vp-icon" aria-hidden="true">🌍</span>
+      <h4>No Foreign Transaction Fees</h4>
+      <p>Travel, shop internationally, or pay in foreign currencies — the Altitude Rewards Visa won't charge you extra for it.</p>
+    </div>
+    <div class="vp-card">
+      <span class="vp-icon" aria-hidden="true">🔒</span>
+      <h4>Transparent Terms</h4>
+      <p>We lead with the numbers. APR, fees, rewards rates — all of it is right here, not buried three pages deep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     REWARDS BREAKDOWN
+════════════════════════════════════════════ -->
+<section class="rewards" aria-labelledby="rewards-heading">
+  <p class="section-label" style="color: var(--teal);">Altitude Rewards Visa</p>
+  <h2 class="section-title" id="rewards-heading">Cash Back on What You Buy Every Day</h2>
+  <p class="section-sub">Your rewards rate depends on the category — because not all spending is the same.</p>
+
+  <div class="rewards-grid">
+    <div class="reward-tile">
+      <div class="reward-pct">3%</div>
+      <div class="reward-cat">Dining &<br>Food Delivery</div>
+    </div>
+    <div class="reward-tile">
+      <div class="reward-pct">2%</div>
+      <div class="reward-cat">Streaming &<br>Subscriptions</div>
+    </div>
+    <div class="reward-tile">
+      <div class="reward-pct">1%</div>
+      <div class="reward-cat">All Other<br>Purchases</div>
+    </div>
+  </div>
+
+  <p class="rewards-note">
+    Cash back rates apply to qualifying purchases in each category. Rewards are credited to your account monthly. See Cardholder Agreement for full program terms and exclusions. Subject to credit approval based on creditworthiness.
+  </p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SOCIAL PROOF
+════════════════════════════════════════════ -->
+<section class="social-proof" aria-labelledby="proof-heading">
+  <p class="section-label">What People Are Saying</p>
+  <h2 class="section-title" id="proof-heading">Real People. Real Results.</h2>
+  <p class="section-sub">Early account holders share what it's actually like to bank with Altitude.</p>
+
+  <div class="testimonials">
+    <div class="testimonial">
+      <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+      <p>"I switched from my old bank after years of paying $12 a month for basically nothing. Altitude has no fees, I got my paycheck two days early, and the app is genuinely good. Wish I'd done this sooner."</p>
+      <div class="testimonial-author">Jordan M.</div>
+      <div class="testimonial-role">Marketing Coordinator, 26</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+      <p>"The rewards card is the first credit card I've actually understood. 3% back on food delivery, 2% on my streaming apps — those are literally my two biggest spending categories. It just makes sense."</p>
+      <div class="testimonial-author">Priya K.</div>
+      <div class="testimonial-role">Software Engineer, 28</div>
+    </div>
+    <div class="testimonial">
+      <div class="testimonial-stars" aria-label="5 stars">★★★★★</div>
+      <p>"I was nervous about applying for a credit card but the terms were laid out clearly — no annual fee, the APR range was right there, no surprises. That transparency is what sold me."</p>
+      <div class="testimonial-author">Marcus T.</div>
+      <div class="testimonial-role">Graphic Designer, 24</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FAQ
+════════════════════════════════════════════ -->
+<section class="faq" aria-labelledby="faq-heading">
+  <p class="section-label">Got Questions?</p>
+  <h2 class="section-title" id="faq-heading">The Stuff You Actually Want to Know</h2>
+  <p class="section-sub">Straight answers to the questions a 25-year-old would actually search.</p>
+
+  <div class="faq-list" role="list">
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+        Is there really no monthly fee — ever?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-1" role="region">
+        Yes. The Altitude Everyday Checking account has no monthly maintenance fee, no minimum balance requirement, and no fee to open. There are no conditions attached — no direct deposit requirement to waive a fee, no minimum balance to maintain. It's just free to have.
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+        How does the 0% intro APR work on the Rewards Visa?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-2" role="region">
+        New cardholders get 0% intro APR for 12 months on purchases. After the introductory period ends, a variable APR of 19.99%–27.99% applies based on your creditworthiness. The exact rate you receive depends on your credit profile at the time of application. We show you your rate before you accept — no surprises.
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+        What counts as "dining" for the 3% cash back?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-3" role="region">
+        The 3% cash back applies to purchases at restaurants, cafes, bars, and food delivery services (including DoorDash, Uber Eats, Grubhub, and similar platforms). Grocery stores are not included in the dining category — those purchases earn 1% cash back. See the Cardholder Agreement for the full category definitions.
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+        Will applying affect my credit score?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-4" role="region">
+        Applying for the Altitude Rewards Visa involves a hard credit inquiry, which may temporarily affect your credit score. Opening the Altitude Everyday Checking account does not require a hard credit pull. Approval for the Rewards Visa is subject to creditworthiness.
+      </div>
+    </div>
+
+    <div class="faq-item" role="listitem">
+      <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+        Can I open both accounts at the same time?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="faq-answer" id="faq-5" role="region">
+        Yes. You can apply for both the Altitude Everyday Checking account and the Altitude Rewards Visa in a single session. The checking account opens immediately upon approval. The Rewards Visa is subject to credit approval based on creditworthiness, and your card will arrive within 7–10 business days of approval.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     BOTTOM CTA
+════════════════════════════════════════════ -->
+<section class="bottom-cta" id="open-account" aria-labelledby="cta-heading">
+  <h2 id="cta-heading">Ready to Bank Like You Mean It?</h2>
+  <p>Open your Altitude Everyday Checking account and apply for the Altitude Rewards Visa today. Takes about 5 minutes.</p>
+  <div class="bottom-cta-btns">
+    <a href="#" class="btn-primary">Open Your Account</a>
+    <a href="#products" class="btn-secondary">Compare Products</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     LEGAL DISCLOSURES (Regulation Z — Required)
+════════════════════════════════════════════ -->
+<div class="disclosure" role="contentinfo" aria-label="Legal disclosures">
+  <p><strong>Altitude Rewards Visa — APR & Rates Disclosure</strong></p>
+  <p>
+    <sup>1</sup> <strong>Intro APR:</strong> 0% intro APR for 12 months on purchases for new cardholders. After that, a variable APR of 19.99%–27.99% applies based on your creditworthiness. The variable APR is based on the Prime Rate and may change. See Cardholder Agreement for full terms.
+  </p>
+  <p>
+    <strong>Cash Back Rewards:</strong> 3% cash back on dining & food delivery; 2% cash back on streaming & subscriptions; 1% cash back on all other purchases. Rewards are subject to the terms of the Altitude Rewards Program. See Cardholder Agreement for category definitions, exclusions, and redemption terms.
+  </p>
+  <p>
+    <strong>Altitude Everyday Checking:</strong> No monthly maintenance fee. No minimum balance required. Early direct deposit availability of up to 2 days is not guaranteed and depends on the timing of your payer's submission of the deposit. ATM reimbursement of up to $10 per month applies to fees charged by other banks' ATMs nationwide.
+  </p>
+  <p>
+    <strong>Credit Approval:</strong> All credit products are subject to credit approval based on creditworthiness. Applying for the Altitude Rewards Visa involves a hard credit inquiry. Altitude Financial is an equal opportunity lender.
+  </p>
+  <p>
+    All products and offers are subject to change. Campaign active August 1–10, 2026. For full terms and conditions, visit <a href="#" style="color: var(--teal);">altitudefinancial.com/terms</a>. For our privacy policy, visit <a href="#" style="color: var(--teal);">altitudefinancial.com/privacy</a>.
+  </p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer>
+  <a href="#" class="footer-logo">Altitude<span>Financial</span></a>
+  <nav class="footer-links" aria-label="Footer navigation">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Rates & Fees</a>
+    <a href="#">Accessibility</a>
+    <a href="#">Contact Us</a>
+  </nav>
+  <p class="footer-copy">
+    &copy; 2026 Altitude Financial. All rights reserved. Member FDIC. Equal Housing Lender.
+    Altitude Financial is not responsible for third-party websites linked from this page.
+  </p>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     COOKIE CONSENT BANNER
+════════════════════════════════════════════ -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite">
+  <p>
+    We use cookies to improve your experience and analyze site traffic. By continuing to use this site, you agree to our
+    <a href="#">Cookie Policy</a> and <a href="#">Privacy Policy</a>.
+  </p>
+  <button id="cookie-accept" onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieAccepted','true');">
+    Accept & Continue
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+<script>
+  // Cookie banner: hide if already accepted
+  (function() {
+    if (localStorage.getItem('cookieAccepted') === 'true') {
+      var banner = document.getElementById('cookie-banner');
+      if (banner) banner.style.display = 'none';
+    }
+  })();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(function(el) {
+        el.classList.remove('open');
+        el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      // Toggle clicked
+      if (!isOpen) {
+        item.classList.add('open');
+        this.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
